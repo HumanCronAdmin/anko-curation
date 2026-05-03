@@ -1,0 +1,267 @@
+/* あんこ日和 — 和テーマ (あずき + 抹茶 + 生成り) */
+
+:root {
+  --azuki: #6B2B3A;
+  --azuki-deep: #4A1A26;
+  --azuki-light: #9E5D6B;
+  --matcha: #6B8E23;
+  --matcha-light: #A4B97B;
+  --kinari: #F5EFE3;
+  --kinari-deep: #E8DFC9;
+  --sumi: #2B2422;
+  --sakura: #FFD1DC;
+  --kinako: #D4A574;
+  --paper: #FBF8F1;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  color: var(--sumi);
+  background: var(--paper);
+  line-height: 1.9;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(251, 248, 241, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--kinari-deep);
+}
+.brand a {
+  color: var(--azuki); text-decoration: none;
+  font-size: 1.15rem; font-weight: 600; letter-spacing: 0.04em;
+}
+.brand-mark { color: var(--azuki); font-size: 1.4rem; vertical-align: -2px; margin-right: 4px; }
+.site-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.site-nav a {
+  color: var(--sumi); text-decoration: none;
+  font-size: 0.92rem; letter-spacing: 0.06em;
+  padding: 4px 2px; border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.site-nav a:hover { color: var(--azuki); border-bottom-color: var(--azuki); }
+
+@media (max-width: 600px) {
+  .site-header { flex-direction: column; gap: 10px; padding: 12px; }
+  .site-nav { gap: 12px; font-size: 0.85rem; }
+}
+
+/* ===== Hero ===== */
+.hero {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 209, 220, 0.4), transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 165, 116, 0.3), transparent 55%),
+    linear-gradient(160deg, var(--kinari) 0%, var(--paper) 100%);
+  padding: 90px 24px 110px;
+  text-align: center;
+  border-bottom: 1px solid var(--kinari-deep);
+}
+.hero-inner { max-width: 720px; margin: 0 auto; }
+.hero-eyebrow {
+  color: var(--azuki); letter-spacing: 0.3em; font-size: 0.78rem;
+  margin-bottom: 18px; text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  color: var(--azuki-deep);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+.hero-lead {
+  color: var(--sumi);
+  font-size: 0.98rem;
+  letter-spacing: 0.05em;
+  line-height: 2.1;
+  opacity: 0.85;
+}
+
+/* ===== Section ===== */
+.section { padding: 80px 24px; }
+.section-cream { background: var(--kinari); }
+.container { max-width: 1080px; margin: 0 auto; }
+.container-narrow { max-width: 640px; margin: 0 auto; text-align: center; }
+
+.eyebrow {
+  color: var(--matcha); letter-spacing: 0.3em; font-size: 0.74rem;
+  text-align: center; margin-bottom: 10px; text-transform: uppercase;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--azuki-deep);
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.section-lead {
+  text-align: center; color: var(--azuki-light);
+  font-size: 0.92rem; letter-spacing: 0.1em;
+  margin-bottom: 48px;
+}
+
+/* ===== Season grid ===== */
+.season-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.season-card {
+  background: var(--paper);
+  border: 1px solid var(--kinari-deep);
+  border-radius: 4px;
+  padding: 28px 22px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.season-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 43, 58, 0.08);
+}
+.season-emoji { font-size: 2.4rem; margin-bottom: 10px; }
+.season-name { color: var(--azuki); font-size: 1.05rem; letter-spacing: 0.1em; margin-bottom: 6px; }
+.season-items { color: var(--sumi); opacity: 0.75; font-size: 0.88rem; line-height: 1.8; }
+
+/* ===== Mood grid ===== */
+.mood-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.mood-card {
+  background: linear-gradient(135deg, var(--kinari) 0%, var(--paper) 100%);
+  border: 1px solid var(--kinari-deep);
+  border-radius: 30px;
+  padding: 22px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mood-card:hover {
+  border-color: var(--azuki);
+  background: var(--paper);
+}
+.mood-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.mood-label { color: var(--azuki); font-size: 0.95rem; letter-spacing: 0.08em; }
+.mood-sub { color: var(--sumi); opacity: 0.6; font-size: 0.78rem; margin-top: 4px; }
+
+/* ===== Diary grid ===== */
+.diary-grid {
+  display: grid; gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.diary-card {
+  background: var(--paper);
+  border: 1px solid var(--kinari-deep);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.diary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(107, 43, 58, 0.12);
+}
+.diary-img {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--kinari-deep), var(--kinako));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem; color: var(--paper);
+}
+.diary-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.diary-body { padding: 20px 22px 24px; }
+.diary-date { color: var(--matcha); font-size: 0.74rem; letter-spacing: 0.2em; margin-bottom: 6px; }
+.diary-title { color: var(--azuki-deep); font-size: 1.1rem; letter-spacing: 0.04em; margin-bottom: 8px; line-height: 1.6; }
+.diary-excerpt { color: var(--sumi); opacity: 0.78; font-size: 0.86rem; line-height: 1.85; }
+
+.diary-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--azuki-light);
+  font-size: 0.92rem;
+  padding: 60px 20px;
+  border: 1px dashed var(--kinari-deep);
+  border-radius: 4px;
+}
+
+/* ===== Pairing ===== */
+.pairing-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.pairing-card {
+  background: var(--paper);
+  border-left: 3px solid var(--matcha);
+  padding: 20px 22px;
+  border-radius: 0 4px 4px 0;
+}
+.pairing-icon { font-size: 1.6rem; margin-bottom: 6px; }
+.pairing-card h3 { color: var(--azuki); font-size: 0.98rem; letter-spacing: 0.06em; margin-bottom: 4px; font-weight: 500; }
+.pairing-card p { color: var(--sumi); opacity: 0.75; font-size: 0.84rem; }
+
+/* ===== Dictionary ===== */
+.dict-grid {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.dict-card {
+  background: var(--paper);
+  border: 1px solid var(--kinari-deep);
+  border-radius: 4px;
+  padding: 22px 24px;
+}
+.dict-term {
+  color: var(--azuki); font-size: 1.15rem; letter-spacing: 0.1em;
+  margin-bottom: 4px; font-weight: 600;
+}
+.dict-reading {
+  color: var(--matcha); font-size: 0.78rem; letter-spacing: 0.2em;
+  margin-bottom: 10px; text-transform: uppercase;
+}
+.dict-desc { color: var(--sumi); font-size: 0.88rem; line-height: 1.85; opacity: 0.85; }
+
+/* ===== About ===== */
+.about-text { margin-top: 32px; text-align: left; }
+.about-text p {
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 2.2;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+}
+.about-text p:first-child {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--azuki);
+  letter-spacing: 0.15em;
+  margin-bottom: 32px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--azuki-deep);
+  color: var(--kinari);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+.footer-meta { color: var(--azuki-light); font-size: 0.74rem; margin-top: 8px; }
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  .section { padding: 56px 18px; }
+  .hero { padding: 60px 18px 80px; }
+  .hero-lead { font-size: 0.9rem; line-height: 2; }
+}

@@ -1,0 +1,7 @@
+[
+  { "key": "tired",     "icon": "😮‍💨", "label": "疲れた日に",   "sub": "甘さがしみる" },
+  { "key": "rainy",     "icon": "☔",    "label": "雨の日に",     "sub": "おしるこの湯気" },
+  { "key": "morning",   "icon": "☀",    "label": "朝コーヒーと", "sub": "あんバター" },
+  { "key": "night",     "icon": "🌙",    "label": "夜のお茶と",   "sub": "羊羹をひとさじ" },
+  { "key": "celebrate", "icon": "🎀",    "label": "お祝いに",     "sub": "上生菓子を" }
+]
