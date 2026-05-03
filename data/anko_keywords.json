@@ -1,0 +1,24 @@
+{
+  "keywords": [
+    {"slug":"anko-types-guide","keyword":"あんこ 種類","intent":"comparison","status":"pending","title_hint":"あんこの種類 完全ガイド (粒/こし/小倉/白/うぐいす)"},
+    {"slug":"dorayaki-toriyose-best","keyword":"どら焼き 取寄","intent":"shopping","status":"pending","title_hint":"どら焼き 取寄 老舗ベスト10"},
+    {"slug":"mizu-yokan-vs-yokan","keyword":"水羊羹 羊羹 違い","intent":"informational","status":"pending","title_hint":"水羊羹と羊羹 何が違う?"},
+    {"slug":"ohagi-vs-botamochi","keyword":"おはぎ ぼたもち 違い","intent":"informational","status":"pending","title_hint":"おはぎとぼたもち 違いは?"},
+    {"slug":"monaka-history-shops","keyword":"最中 名店","intent":"informational","status":"pending","title_hint":"最中 (もなか) の歴史と全国名店"},
+    {"slug":"shiro-an-vs-tsubu-an","keyword":"白あん 黒あん 違い","intent":"informational","status":"pending","title_hint":"白あんと粒あん 何が違う?"},
+    {"slug":"sakuramochi-kanto-kansai","keyword":"桜餅 関東 関西","intent":"informational","status":"pending","title_hint":"桜餅 関東風と関西風の違い"},
+    {"slug":"oshiruko-zenzai-difference","keyword":"おしるこ ぜんざい 違い","intent":"informational","status":"pending","title_hint":"おしること ぜんざい 何が違う?"},
+    {"slug":"toraya-yokan-flavors","keyword":"虎屋 羊羹 種類","intent":"shopping","status":"pending","title_hint":"虎屋 羊羹 全種類ガイド"},
+    {"slug":"akafuku-history","keyword":"赤福 歴史","intent":"informational","status":"pending","title_hint":"赤福 300年の歴史と名物の理由"},
+    {"slug":"ankobutter-toast-recipe","keyword":"あんバター トースト","intent":"recipe","status":"pending","title_hint":"あんバタートースト 朝の救い"},
+    {"slug":"furusato-nozei-anko","keyword":"ふるさと納税 和菓子","intent":"shopping","status":"pending","title_hint":"ふるさと納税で頼む あんこ和菓子ベスト"},
+    {"slug":"matcha-anko-pairing","keyword":"抹茶 あんこ 合わせ方","intent":"informational","status":"pending","title_hint":"抹茶とあんこ 王道ペアリング"},
+    {"slug":"anko-recipe-home","keyword":"あんこ レシピ","intent":"recipe","status":"pending","title_hint":"自家製あんこ 粒あん こしあん 作り方"},
+    {"slug":"kuri-kinton-shops","keyword":"栗きんとん 取寄","intent":"shopping","status":"pending","title_hint":"栗きんとん 秋の取寄ベスト"},
+    {"slug":"anko-omiyage-tokyo","keyword":"和菓子 東京 お土産","intent":"shopping","status":"pending","title_hint":"東京で買える あんこ和菓子お土産"},
+    {"slug":"anko-omiyage-kyoto","keyword":"和菓子 京都 お土産","intent":"shopping","status":"pending","title_hint":"京都の あんこ和菓子 名店巡り"},
+    {"slug":"daifuku-types","keyword":"大福 種類","intent":"informational","status":"pending","title_hint":"大福の種類 全国の名物大福"},
+    {"slug":"manju-shumi-types","keyword":"饅頭 種類","intent":"informational","status":"pending","title_hint":"饅頭の種類 薯蕷/酒/温泉/田舎"},
+    {"slug":"anko-saving-method","keyword":"あんこ 保存","intent":"informational","status":"pending","title_hint":"あんこの保存方法 冷蔵 冷凍 賞味期限"}
+  ]
+}

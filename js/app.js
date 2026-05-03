@@ -55,31 +55,47 @@ async function renderMoods() {
   } catch (e) { console.error(e); }
 }
 
-// ===== Diary =====
+// ===== Articles (type別 render: products / seo / diary) =====
+function renderArticleSection(grid, articles, type, emptyMsg) {
+  const filtered = articles.filter(a => (a.type || 'diary') === type);
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="diary-empty">${emptyMsg}</div>`;
+    return;
+  }
+  const sorted = [...filtered].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  grid.innerHTML = sorted.slice(0, 9).map(a => {
+    const img = a.image
+      ? `<img src="${escapeHtml(a.image)}" alt="${escapeHtml(a.title)}" loading="lazy">`
+      : (a.emoji || '🍡');
+    const subdir = a.type || 'diary';
+    return `<a href="articles/${escapeHtml(subdir)}/${escapeHtml(a.stem)}.html" class="diary-card">
+      <div class="diary-img">${img}</div>
+      <div class="diary-body">
+        <div class="diary-date">${escapeHtml(a.date || '')}</div>
+        <div class="diary-title">${escapeHtml(a.title)}</div>
+        <div class="diary-excerpt">${escapeHtml(a.excerpt || '')}</div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
 async function renderDiary() {
-  const grid = document.getElementById('diary-grid');
-  if (!grid) return;
   try {
-    const articles = await loadJSON('data/articles.json');
-    if (!articles.length) {
-      grid.innerHTML = `<div class="diary-empty">最初の偏愛日記を 準備中</div>`;
-      return;
-    }
-    const sorted = [...articles].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-    grid.innerHTML = sorted.slice(0, 6).map(a => {
-      const img = a.image
-        ? `<img src="${escapeHtml(a.image)}" alt="${escapeHtml(a.title)}" loading="lazy">`
-        : (a.emoji || '🍡');
-      return `<a href="articles/${escapeHtml(a.stem)}.html" class="diary-card">
-        <div class="diary-img">${img}</div>
-        <div class="diary-body">
-          <div class="diary-date">${escapeHtml(a.date || '')}</div>
-          <div class="diary-title">${escapeHtml(a.title)}</div>
-          <div class="diary-excerpt">${escapeHtml(a.excerpt || '')}</div>
-        </div>
-      </a>`;
-    }).join('');
-  } catch (e) { console.error(e); grid.innerHTML = `<div class="diary-empty">記事 読み込み エラー</div>`; }
+    const raw = await loadJSON('data/articles.json');
+    const articles = Array.isArray(raw) ? raw : (raw.articles || []);
+    const productsGrid = document.getElementById('products-grid');
+    const seoGrid = document.getElementById('seo-grid');
+    const diaryGrid = document.getElementById('diary-grid');
+    if (productsGrid) renderArticleSection(productsGrid, articles, 'products', '商品紹介 準備中');
+    if (seoGrid) renderArticleSection(seoGrid, articles, 'seo', '読みもの 準備中');
+    if (diaryGrid) renderArticleSection(diaryGrid, articles, 'diary', '最初の偏愛日記を 準備中');
+  } catch (e) {
+    console.error(e);
+    ['products-grid','seo-grid','diary-grid'].forEach(id => {
+      const g = document.getElementById(id);
+      if (g) g.innerHTML = `<div class="diary-empty">記事 読み込み エラー</div>`;
+    });
+  }
 }
 
 // ===== Dictionary =====

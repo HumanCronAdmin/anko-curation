@@ -7,7 +7,7 @@
 
 set -euo pipefail
 
-staged=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^articles/.+\.html$' || true)
+staged=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^articles/.+\.html$|^articles/[^/]+/.+\.html$' || true)
 if [ -z "$staged" ]; then
     exit 0
 fi
@@ -50,8 +50,17 @@ case "$worst" in
         echo "  WARN 承認して通す: git commit --no-verify" >&2
         exit 1
         ;;
-    *)
+    2)
         echo "[pre-commit] ❌ FAIL 検出 → commit ブロック (--no-verify 使用も非推奨)" >&2
         exit 2
+        ;;
+    3)
+        echo "[pre-commit] ⚠ API_ERROR (Gemini rate limit / server) → 検証 skip で commit 通過" >&2
+        echo "[pre-commit] 後で必ず: python scripts/verify_facts_anko.py --all で再検証すること" >&2
+        exit 0
+        ;;
+    *)
+        echo "[pre-commit] ❌ unknown verdict ($worst) → ブロック" >&2
+        exit "$worst"
         ;;
 esac
