@@ -1,11 +1,14 @@
-[
-  {
-    "stem": "toraya-kogata-yokan",
-    "type": "diary",
-    "title": "虎屋 小形羊羹 5種を ひとつずつ",
-    "date": "2026.05",
-    "emoji": "🍫",
-    "image": "",
-    "excerpt": "夜のとっておきに ひとつ取り出す 抹茶 紅茶 黒砂糖 はちみつ おもかげ 順に開けていく時間そのものが ぜいたく"
-  }
-]
+{
+  "articles": [
+    {
+      "stem": "toraya-kogata-yokan",
+      "type": "diary",
+      "slug": "toraya-kogata-yokan",
+      "title": "虎屋 小形羊羹 5種を ひとつずつ",
+      "date": "2026.05",
+      "emoji": "🍫",
+      "image": "",
+      "excerpt": "夜のとっておきに ひとつ取り出す 抹茶 紅茶 黒砂糖 はちみつ おもかげ 順に開けていく時間そのものが ぜいたく"
+    }
+  ]
+}
