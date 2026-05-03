@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>あんこ名店 全国18選 — あんこ日和</title>
+<meta name="description" content="あんこを愛する人のための全国名店リスト 虎屋 たねや 両口屋是清 赤福 出町ふたば 塩瀬総本家ほか 18軒 取寄可否と名物を一覧で">
+<meta property="og:title" content="あんこ名店 全国18選 — あんこ日和">
+<meta property="og:description" content="全国の老舗あんこ名店 取寄可否・名物・創業年を一覧で">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humancronadmin.github.io/anko-curation/shops.html">
+<meta name="theme-color" content="#6B2B3A">
+<link rel="canonical" href="https://humancronadmin.github.io/anko-curation/shops.html">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+.shops-wrap { max-width: 1080px; margin: 0 auto; padding: 60px 24px 80px; }
+.region-bar { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+.region-btn { padding: 8px 18px; border: 1px solid var(--azuki-light); background: var(--paper); color: var(--azuki); border-radius: 30px; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.1em; font-family: inherit; transition: all 0.2s; }
+.region-btn.active, .region-btn:hover { background: var(--azuki); color: var(--paper); border-color: var(--azuki); }
+.shops-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.shop-card { background: var(--paper); border: 1px solid var(--kinari-deep); border-radius: 4px; padding: 24px 26px; transition: transform 0.2s, box-shadow 0.2s; }
+.shop-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(107,43,58,0.08); }
+.shop-name { color: var(--azuki-deep); font-size: 1.2rem; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 2px; }
+.shop-reading { color: var(--matcha); font-size: 0.78rem; letter-spacing: 0.18em; margin-bottom: 14px; }
+.shop-meta { display: flex; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; color: var(--azuki-light); margin-bottom: 12px; }
+.shop-meta span { background: var(--kinari); padding: 3px 10px; border-radius: 3px; }
+.shop-specialty { color: var(--azuki); font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 0.04em; }
+.shop-note { color: var(--sumi); opacity: 0.8; font-size: 0.86rem; line-height: 1.85; margin-bottom: 14px; }
+.shop-link { color: var(--azuki); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.1em; border-bottom: 1px solid var(--azuki); }
+.shop-link:hover { color: var(--azuki-deep); }
+.shop-online { color: var(--matcha); font-size: 0.74rem; letter-spacing: 0.15em; }
+.shop-offline { color: var(--azuki-light); font-size: 0.74rem; letter-spacing: 0.15em; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"あんこ名店 全国18選","description":"全国の老舗あんこ名店リスト"}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand"><a href="./"><span class="brand-mark">●</span> あんこ日和</a></div>
+  <nav class="site-nav">
+    <a href="./#season">季節</a>
+    <a href="./#mood">気分</a>
+    <a href="./#diary">偏愛日記</a>
+    <a href="shops.html">名店</a>
+    <a href="./#dictionary">辞典</a>
+  </nav>
+</header>
+
+<section class="hero" style="padding:60px 24px 70px">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">SHOPS</p>
+    <h1 class="hero-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">あんこ名店<br>全国18選</h1>
+    <p class="hero-lead">老舗から新進まで あんこを愛する人のための名店リスト</p>
+  </div>
+</section>
+
+<div class="shops-wrap">
+  <div class="region-bar" id="region-bar"></div>
+  <div class="shops-grid" id="shops-grid"></div>
+</div>
+
+<footer class="site-footer">
+  <p>あんこ日和 · 個人運営 · ひとさじの幸せを毎日どこかで</p>
+  <p class="footer-meta">© 2026 anko-curation</p>
+</footer>
+
+<script>
+const REGIONS = ['すべて','東北','関東','中部','近畿','中国','九州','全国'];
+
+async function init() {
+  const shops = await (await fetch('data/shops.json')).json();
+  const bar = document.getElementById('region-bar');
+  const grid = document.getElementById('shops-grid');
+
+  function render(filter) {
+    const list = filter === 'すべて' ? shops : shops.filter(s => s.region === filter);
+    grid.innerHTML = list.map(s => {
+      const onlineTag = s.online ? '<span class="shop-online">取寄 ○</span>' : '<span class="shop-offline">取寄 ✗ (店舗のみ)</span>';
+      const link = s.site ? `<a href="${s.site}" target="_blank" rel="noopener" class="shop-link">公式サイト →</a>` : '';
+      return `<div class="shop-card">
+        <div class="shop-name">${s.name}</div>
+        <div class="shop-reading">${s.reading}</div>
+        <div class="shop-meta"><span>${s.city}</span><span>創業 ${s.since}</span>${onlineTag}</div>
+        <div class="shop-specialty">${s.specialty}</div>
+        <div class="shop-note">${s.note}</div>
+        ${link}
+      </div>`;
+    }).join('');
+  }
+
+  bar.innerHTML = REGIONS.map((r,i) => `<button class="region-btn${i===0?' active':''}" data-region="${r}">${r}</button>`).join('');
+  bar.addEventListener('click', e => {
+    if (!e.target.classList.contains('region-btn')) return;
+    bar.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    render(e.target.dataset.region);
+  });
+  render('すべて');
+}
+init();
+</script>
+</body>
+</html>

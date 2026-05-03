@@ -1,0 +1,20 @@
+[
+  {"name":"虎屋","reading":"とらや","region":"全国","city":"東京","specialty":"羊羹・小形羊羹","since":1586,"online":true,"site":"https://www.toraya-group.co.jp/","note":"室町時代後期創業 京都発祥 小形羊羹は5夜のとっておき"},
+  {"name":"たねや","reading":"たねや","region":"近畿","city":"滋賀・近江八幡","specialty":"ふくみ天平・最中","since":1872,"online":true,"site":"https://taneya.jp/","note":"皮と餡を別添え 食べる直前にはさむ最中"},
+  {"name":"両口屋是清","reading":"りょうぐちやこれきよ","region":"中部","city":"愛知・名古屋","specialty":"千なり・旦","since":1634,"online":true,"site":"https://www.ryoguchiya-korekiyo.co.jp/","note":"名古屋を代表する老舗 千なりは小ぶりなどら焼"},
+  {"name":"赤福","reading":"あかふく","region":"近畿","city":"三重・伊勢","specialty":"赤福餅","since":1707,"online":true,"site":"https://www.akafuku.co.jp/","note":"伊勢神宮内宮参道の象徴 こしあんを餅に"},
+  {"name":"とらや工房","reading":"とらやこうぼう","region":"関東","city":"静岡・御殿場","specialty":"焼き立てどら焼き","since":2007,"online":false,"site":"https://www.toraya-kobo.jp/","note":"虎屋の工房店 富士山を望む小さな喫茶併設"},
+  {"name":"叶 匠壽庵","reading":"かのう しょうじゅあん","region":"近畿","city":"滋賀・大津","specialty":"あも","since":1958,"online":true,"site":"https://kanou.com/","note":"大納言小豆と求肥の棹菓子 あも = 母から子へ"},
+  {"name":"とらや黒川","reading":"とらや くろかわ","region":"全国","city":"東京","specialty":"夜の梅・羊羹","since":1586,"online":true,"site":"https://www.toraya-group.co.jp/","note":"夜の梅 = 虎屋の代表羊羹 切口に小豆が梅花のように"},
+  {"name":"福砂屋","reading":"ふくさや","region":"九州","city":"長崎","specialty":"カステラ・あんこ","since":1624,"online":true,"site":"https://www.fukusaya.co.jp/","note":"カステラの老舗だが季節のあんこ菓子も"},
+  {"name":"出町ふたば","reading":"でまちふたば","region":"近畿","city":"京都・出町","specialty":"豆大福","since":1899,"online":false,"site":"","note":"行列の絶えない京都の豆大福 当日限り"},
+  {"name":"鶴屋吉信","reading":"つるやよしのぶ","region":"近畿","city":"京都","specialty":"柚餅・京観世","since":1803,"online":true,"site":"https://www.tsuruyayoshinobu.jp/","note":"上生菓子の格 柚餅は柚の香りと白あん"},
+  {"name":"塩瀬総本家","reading":"しおせそうほんけ","region":"関東","city":"東京","specialty":"志ほせ饅頭","since":1349,"online":true,"site":"https://www.shiose.co.jp/","note":"日本最古とされる和菓子司の一つ 薯蕷饅頭の元祖"},
+  {"name":"花園万頭","reading":"はなぞのまんじゅう","region":"関東","city":"東京・新宿","specialty":"花園万頭","since":1834,"online":true,"site":"https://www.hanazono.co.jp/","note":"こしあんを淡雪のような皮で包んだ江戸の名品"},
+  {"name":"宗家 源 吉兆庵","reading":"そうけ みなもと きっちょうあん","region":"中国","city":"岡山","specialty":"福渡せんべい・季節菓子","since":1946,"online":true,"site":"https://www.kitchoan.co.jp/","note":"季節の素材を使った創作和菓子 取寄充実"},
+  {"name":"萩の月","reading":"はぎのつき","region":"東北","city":"宮城・仙台","specialty":"萩の月 (黄味餡カスタード)","since":1979,"online":true,"site":"https://www.sanzen.co.jp/","note":"和洋折衷の代表 ふんわりカステラに黄味餡カスタード"},
+  {"name":"井村屋","reading":"いむらや","region":"全国","city":"三重・津","specialty":"あずきバー・ようかん","since":1896,"online":true,"site":"https://www.imuraya.co.jp/","note":"あずきバーはコンビニで会える日常の幸せ"},
+  {"name":"森八","reading":"もりはち","region":"中部","city":"石川・金沢","specialty":"長生殿","since":1625,"online":true,"site":"https://www.morihachi.co.jp/","note":"加賀藩御用達 日本三大名菓 長生殿"},
+  {"name":"末富","reading":"すえとみ","region":"近畿","city":"京都","specialty":"うすべに・京干菓子","since":1893,"online":true,"site":"https://www.kyoto-suetomi.com/","note":"上品な京干菓子 季節の上生菓子"},
+  {"name":"梅園","reading":"うめぞの","region":"関東","city":"東京・浅草","specialty":"あわぜんざい","since":1854,"online":false,"site":"https://www.asakusa-umezono.co.jp/","note":"浅草の老舗 粟と餡のあわぜんざいが名物"}
+]
