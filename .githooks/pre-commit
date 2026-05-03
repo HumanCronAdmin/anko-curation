@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# pre-commit hook: articles/*.html 変更 commit 時に verify_facts_anko.py 強制実行
+# verify exit code: PASS=0 / WARN=1 / FAIL=2 → 0以外で commit ブロック
+#
+# setup: git config core.hooksPath .githooks (anko-curation repo 内で1回)
+# bypass (緊急時のみ): git commit --no-verify
+
+set -euo pipefail
+
+staged=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^articles/.+\.html$' || true)
+if [ -z "$staged" ]; then
+    exit 0
+fi
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/../.." && pwd)"
+VERIFY="$WORKSPACE_ROOT/scripts/verify_facts_anko.py"
+
+if [ ! -f "$VERIFY" ]; then
+    echo "[pre-commit] verify_facts_anko.py not found: $VERIFY" >&2
+    echo "[pre-commit] bypass: git commit --no-verify" >&2
+    exit 1
+fi
+
+echo "[pre-commit] articles 変更検出 → ファクト検証..."
+echo ""
+
+worst=0
+for f in $staged; do
+    stem=$(basename "$f" .html)
+    echo "--- verify: $stem ---"
+    set +e
+    PYTHONIOENCODING=utf-8 python "$VERIFY" "$stem"
+    rc=$?
+    set -e
+    if [ "$rc" -gt "$worst" ]; then worst=$rc; fi
+    echo ""
+done
+
+case "$worst" in
+    0)
+        echo "[pre-commit] ✅ 全 articles PASS → commit 続行"
+        exit 0
+        ;;
+    1)
+        echo "[pre-commit] ⚠ WARN 検出 → commit ブロック" >&2
+        echo "[pre-commit] 修正:" >&2
+        echo "  1. _drafts/<stem>_facts_verified.md でレポート確認" >&2
+        echo "  2. articles/<stem>.html 修正 → git add → 再 commit" >&2
+        echo "  WARN 承認して通す: git commit --no-verify" >&2
+        exit 1
+        ;;
+    *)
+        echo "[pre-commit] ❌ FAIL 検出 → commit ブロック (--no-verify 使用も非推奨)" >&2
+        exit 2
+        ;;
+esac
