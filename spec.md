@@ -1,7 +1,8 @@
-# あんこキュレサイト spec.md (改訂 2026-05-03 夜)
+# あんこキュレサイト spec.md (改訂 2026-05-07 夜)
 
 > 採用柱 B (主軸候補1)・goal-reverse-design PASS 4.25
-> handoff 2026-05-03 夜 タスク2 → User 指示で **GH Pages 路線 + 「あんこ幸せ溢れる」コンセプト軸** に改訂
+> 2026-05-07 改訂: **ついで記録路線確定**・期限/KILL 線撤廃・マネタイズ本命 3 本柱明記
+> 詳細引継ぎ: `Claude-Workspace/handoff.md` 「あんこ日和 戦略確定」セクション
 
 ## コンセプト (User 確定)
 **「あんこがもたらす幸せが溢れているサイト」**
@@ -81,11 +82,22 @@ projects/anko-curation/
 - articles/toraya-kogata-yokan.html (サンプル偏愛日記 1 本)
 - README.md / CLAUDE.md
 
-## Revenue Model
-- 短期 (3 ヶ月・記事 10 本): もしもアフィ Amazon/楽天 月 ¥1,000-3,000
-- 中期 (6 ヶ月・記事 30 本): 月 ¥10,000-30,000
-- 長期 (1 年・記事 100 本): 月 ¥50,000-150,000
-- 単発 note 課金: 「あんこ取寄ベスト 30 選」型を ¥980 で年 2-3 本
+## Revenue Model (2026-05-07 改訂・本命 3 本柱)
+1. **note 単発課金** ¥980 「家族3世代あんこ食べ比べ」型 — 月30部¥30K/弾 (半年-1年射程)
+2. **Kindle 写真集** ¥500-980 — 写真貯まり次第出版・累計¥10-50K/冊
+3. **Pinterest → 楽天/Amazon アフィ (もしも経由)** — 30-60代女性 = Pinterest 圧倒・画像SEO
+
+補助: BOOTH ZINE 直販 / 老舗スポンサー記事 (実績後 ¥3-10万/本) / 書籍化 (3-5年・週刊あんこ路線)
+
+### マネタイズ落とし穴 (避けること)
+- Amazon アソシエイト 180日3件販売ルール → **もしも経由で回避**
+- 楽天クッキー 24h・月¥3K未満は楽天キャッシュ払い
+- A8/もしも 和菓子物販 1-3% → アフィ単独で月¥10万は売上¥330万必要・不可能
+- YMYL (健康効能/糖質/血糖値) 一切書かない
+- パッケージロゴ単体トリミング NG・店内撮影 NG
+- Pinterest アフィ直リン規約変動 → 自サイト経由+URL透かし焼き込み
+- AdSense 食品 CPM¥100-300 = 主軸不可
+- note 手数料 15%
 
 ## ゴール逆算 (4 掛け算 PASS 4.25)
 - 時流 5 / 仮説 4 / 可能 4 / 収益性 4 = 4.25
@@ -99,10 +111,8 @@ projects/anko-curation/
 - ガチ取材路線 (純喫茶古グラス KILL の教訓)
 - 運営者紐付け (komono との同一運営宣言 NG = `feedback_no_owned_site_link_from_persona.md`)
 
-## 撤退条件 (Time-bound Kill Line)
-- 3 ヶ月 (記事 30 本) で月 PV < 1,000 → 文体/テーマ再評価
-- 6 ヶ月 (記事 60 本) で月収益 < ¥3,000 → アフィ構造再設計 or KILL 検討
-- 9 ヶ月 (記事 90 本) で月収益 < ¥10,000 → KILL (補助レーン化)
+## 撤退条件 (2026-05-07 撤廃)
+ついで記録路線確定 (User 元々あんこ食う・コスト追加ゼロ) のため期限/KILL 線**設定しない**。続ける限り写真/voice memo 資産が累積し note/Kindle/書籍化の素材になる。
 
 ## 関連
 - ニッチ判定: `memory/feedback_niche_3indicators_gate.md`
@@ -111,9 +121,23 @@ projects/anko-curation/
 - 運営紐付け禁止: `memory/feedback_no_owned_site_link_from_persona.md`
 - 構造真似元: `projects/okashi/` (自社・GH Pages)
 
-## 次アクション (User GO 後)
-1. `humancronadmin/anko-curation` GitHub repo 作成 + push
-2. GH Pages 有効化 (Settings → Pages → main / root)
-3. 1 本目記事「虎屋 小形羊羹 5 種食べ比べ」用に取寄実購入 (User 手作業)
-4. 写真撮影 → WebP 変換 → images/ 配置
-5. もしもアフィ ID 確認 (`feedback_verify_affiliate_ids.md`)
+## 撮影 5 アクション (買った瞬間 60 秒・全記事の素材源)
+1. 開封前 写真
+2. 断面 写真 (粒/こし が見える 1 枚)
+3. **レシート 写真** = E-E-A-T 一次情報・Google 評価強烈・捏造疑義ゼロ化
+4. メモアプリに 商品名 / 価格 / 店 / 購入日 (3行)
+5. 食った瞬間 voice memo 10-30秒 (生感想)
+
+### 推奨追加 (やれる時)
+- 家族口コミ = 実発言メモ or 録音必須・**LLM 創作禁止**
+- 5-15秒動画 (開封/割る/湯気) → Pinterest/Reels/Shorts
+- 食べる前の状況 (雨の日/疲れた火曜) → 気分ナビ素材
+
+## スコープ (2026-05-07 拡大)
+和菓子店だけでなく **パウチ / 缶詰 / たい焼き / 大福 / 羊羹 / どら焼き / もなか / おはぎ** 全カテゴリ・出かけ先で買う度に記録
+
+## 次アクション
+1. もしもアフィ ID 確認 (`feedback_verify_affiliate_ids.md`)
+2. 撮影 5 アクション運用開始 (買った瞬間 60 秒)
+3. 記事 5 本溜まったら GA4 + Search Console 設定
+4. Pinterest アカウント開設 (季節画像 + URL 透かし)
